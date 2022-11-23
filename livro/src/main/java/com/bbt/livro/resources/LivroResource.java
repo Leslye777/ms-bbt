@@ -20,7 +20,7 @@ public class LivroResource {
 	@Autowired
 	private LivroRepository repository;
 	
-	
+	 
 	@GetMapping
 	public ResponseEntity<List<Livro>> findAll(){
 		List<Livro> list = repository.findAll();

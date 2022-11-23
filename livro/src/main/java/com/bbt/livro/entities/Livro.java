@@ -27,10 +27,11 @@ public class Livro implements Serializable{
 	private String idioma;
 	private String descricao;
 	private int ano;
+	private int emprestado;
 	private int quantidade;
 	
 	public Livro(Long id, String nome, String isbn, String autor, String editora, String idioma, String descricao,
-			int ano, int quantidade) {
+			int ano,int emprestado, int quantidade) {
 		super();
 		this.id = id;
 		this.nome = nome;
@@ -40,6 +41,7 @@ public class Livro implements Serializable{
 		this.idioma = idioma;
 		this.descricao = descricao;
 		this.ano = ano;
+		this.emprestado = emprestado;
 		this.quantidade = quantidade;
 	}
 
@@ -117,6 +119,14 @@ public class Livro implements Serializable{
 
 	public void setQuantidade(int quantidade) {
 		this.quantidade = quantidade;
+	}
+
+	public int getEmprestado() {
+		return emprestado;
+	}
+
+	public void setEmprestado(int emprestado) {
+		this.emprestado = emprestado;
 	}	
 	
 }

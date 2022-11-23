@@ -1,2 +1,0 @@
-INSERT INTO tb_livro (nome,isbn,autor,editora,idioma,descricao,quantidade,ano) VALUES ('Sapiens','9788535933925','Harari, Yuval Noah', 'Editora Schwarcz SA','Portugues','Uma descricao generica',5,2020);
-    
