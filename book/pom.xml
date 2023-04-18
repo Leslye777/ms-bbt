@@ -8,11 +8,11 @@
 		<version>2.3.4.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.bbt</groupId>
-	<artifactId>livro</artifactId>
+	<groupId>com.lib</groupId>
+	<artifactId>book</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>livro</name>
-	<description>Livro microservice</description>
+	<description>Book Microservice</description>
 	<properties>
 		<java.version>11</java.version>
 	</properties>

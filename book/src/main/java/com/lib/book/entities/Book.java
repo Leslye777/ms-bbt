@@ -1,4 +1,4 @@
-package com.bbt.livro.entities;
+package com.lib.book.entities;
 
 import java.io.Serializable;
 
@@ -8,10 +8,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-
 @Entity
-@Table(name= "tb_livro")
-public class Livro implements Serializable{
+@Table(name = "tb_livro")
+public class Book implements Serializable {
 
 	/**
 	 * 
@@ -29,9 +28,9 @@ public class Livro implements Serializable{
 	private int ano;
 	private int emprestado;
 	private int quantidade;
-	
-	public Livro(Long id, String nome, String isbn, String autor, String editora, String idioma, String descricao,
-			int ano,int emprestado, int quantidade) {
+
+	public Book(Long id, String nome, String isbn, String autor, String editora, String idioma, String descricao,
+			int ano, int emprestado, int quantidade) {
 		super();
 		this.id = id;
 		this.nome = nome;
@@ -45,7 +44,7 @@ public class Livro implements Serializable{
 		this.quantidade = quantidade;
 	}
 
-	public Livro() {
+	public Book() {
 		super();
 	}
 
@@ -127,6 +126,6 @@ public class Livro implements Serializable{
 
 	public void setEmprestado(int emprestado) {
 		this.emprestado = emprestado;
-	}	
-	
+	}
+
 }

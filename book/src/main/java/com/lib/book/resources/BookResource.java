@@ -1,4 +1,4 @@
-package com.bbt.livro.resources;
+package com.lib.book.resources;
 
 import java.util.List;
 
@@ -9,28 +9,25 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.bbt.livro.entities.Livro;
-import com.bbt.livro.repositories.LivroRepository;
-
+import com.lib.book.entities.Book;
+import com.lib.book.repositories.BookRepository;
 
 @RestController
-@RequestMapping(value = "/livros")
-public class LivroResource {
-	
+@RequestMapping(value = "/book")
+public class BookResource {
+
 	@Autowired
-	private LivroRepository repository;
-	
-	 
+	private BookRepository repository;
+
 	@GetMapping
-	public ResponseEntity<List<Livro>> findAll(){
-		List<Livro> list = repository.findAll();
+	public ResponseEntity<List<Book>> findAll() {
+		List<Book> list = repository.findAll();
 		return ResponseEntity.ok(list);
 	}
-	
-	
+
 	@GetMapping(value = "/{id}")
-	public ResponseEntity<Livro> findById(@PathVariable Long id){
-		Livro livro = repository.findById(id).get();
-		return ResponseEntity.ok(livro);
+	public ResponseEntity<Book> findById(@PathVariable Long id) {
+		Book book = repository.findById(id).get();
+		return ResponseEntity.ok(book);
 	}
 }

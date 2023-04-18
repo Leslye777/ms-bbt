@@ -1,13 +1,13 @@
-package com.bbt.locatario;
+package com.lib.book;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class LocatarioApplication {
+public class BookApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(LocatarioApplication.class, args);
+		SpringApplication.run(BookApplication.class, args);
 	}
 
 }

@@ -1,0 +1,2 @@
+INSERT INTO tb_livro (nome,isbn,autor,editora,idioma,descricao,ano,emprestado,quantidade) VALUES ('Sapiens','11855386666','Yuval Noah', 'Nova Era','Portugues','Um livro de antropologia',2015,2,5);
+    
