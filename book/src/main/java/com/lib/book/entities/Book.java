@@ -1,69 +1,116 @@
 package com.lib.book.entities;
 
-import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
-@Table(name = "tb_livro")
-public class Book implements Serializable {
+@Table(name = "book")
+public class Book {
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
-	private String nome;
-	private String isbn;
-	private String autor;
-	private String editora;
-	private String idioma;
-	private String descricao;
-	private int ano;
-	private int emprestado;
-	private int quantidade;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-	public Book(Long id, String nome, String isbn, String autor, String editora, String idioma, String descricao,
-			int ano, int emprestado, int quantidade) {
-		super();
-		this.id = id;
-		this.nome = nome;
-		this.isbn = isbn;
-		this.autor = autor;
-		this.editora = editora;
-		this.idioma = idioma;
-		this.descricao = descricao;
-		this.ano = ano;
-		this.emprestado = emprestado;
-		this.quantidade = quantidade;
+    private String title;
+
+    private String author;
+
+    private String publisher;
+
+    private String description;
+    
+    private String isbn;
+    
+    private String category;
+
+	@Column(name = "publication_year")
+    private Integer publicationYear;
+
+    @OneToMany(mappedBy = "book", cascade = CascadeType.ALL)
+    @OnDelete(action = OnDeleteAction.CASCADE)
+    @JsonIgnore
+    private List<BookCopy> copies = new ArrayList<>();
+    
+    // getters and setters
+   
+    public String getDescription() {
+		return description;
 	}
 
-	public Book() {
-		super();
+	public String getCategory() {
+		return category;
 	}
 
-	public Long getId() {
-		return id;
+	public void setCategory(String category) {
+		this.category = category;
 	}
 
-	public void setId(Long id) {
-		this.id = id;
+	public List<BookCopy> getCopies() {
+		return copies;
 	}
 
-	public String getNome() {
-		return nome;
+	public void setCopies(List<BookCopy> copies) {
+		this.copies = copies;
 	}
 
-	public void setNome(String nome) {
-		this.nome = nome;
+	public void setDescription(String description) {
+		this.description = description;
 	}
+    
+    public Long getId() {
+        return id;
+    }
 
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
+    public String getPublisher() {
+        return publisher;
+    }
+
+    public void setPublisher(String publisher) {
+        this.publisher = publisher;
+    }
+
+    public Integer getPublicationYear() {
+        return publicationYear;
+    }
+
+    public void setPublicationYear(Integer publicationYear) {
+        this.publicationYear = publicationYear;
+    }
+    					
 	public String getIsbn() {
 		return isbn;
 	}
@@ -72,60 +119,13 @@ public class Book implements Serializable {
 		this.isbn = isbn;
 	}
 
-	public String getAutor() {
-		return autor;
+	public String getCatyegory() {
+		return category;
 	}
 
-	public void setAutor(String autor) {
-		this.autor = autor;
+	public void setCatyegory(String catyegory) {
+		this.category = catyegory;
 	}
 
-	public String getEditora() {
-		return editora;
-	}
-
-	public void setEditora(String editora) {
-		this.editora = editora;
-	}
-
-	public String getIdioma() {
-		return idioma;
-	}
-
-	public void setIdioma(String idioma) {
-		this.idioma = idioma;
-	}
-
-	public String getDescricao() {
-		return descricao;
-	}
-
-	public void setDescricao(String descricao) {
-		this.descricao = descricao;
-	}
-
-	public int getAno() {
-		return ano;
-	}
-
-	public void setAno(int ano) {
-		this.ano = ano;
-	}
-
-	public int getQuantidade() {
-		return quantidade;
-	}
-
-	public void setQuantidade(int quantidade) {
-		this.quantidade = quantidade;
-	}
-
-	public int getEmprestado() {
-		return emprestado;
-	}
-
-	public void setEmprestado(int emprestado) {
-		this.emprestado = emprestado;
-	}
 
 }
