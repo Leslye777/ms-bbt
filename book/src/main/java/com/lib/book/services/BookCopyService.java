@@ -45,7 +45,8 @@ public class BookCopyService {
             for (int i = 0; i < numCopies; i++) {
                 BookCopy bookCopy = new BookCopy();
                 bookCopy.setBook(book);
-                bookCopy.setAvailable(true);
+                bookCopy.setReserved(false);
+                bookCopy.setBorrowed(false);
                 book.getCopies().add(bookCopy);
                 bookCopies.add(bookCopyRepository.save(bookCopy));
             }

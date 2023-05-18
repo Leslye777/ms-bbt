@@ -1,32 +1,23 @@
-package com.user.entities;
+package com.lib.book.entities;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
 
-@Entity
-@Table(name = "users")
-public class User {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class Users {
+
     private Long id;
 
-    @Column(nullable = false)
+    
     private String firstName;
 
-    @Column(nullable = false)
-    private String lastName;
+    
+//    private String lastName;
 
-    @Column(nullable = false, unique = true)
+    
     private String email;
 
-    @Column(nullable = false)
+    
     private String password;
 
     @Enumerated(EnumType.STRING)
@@ -53,13 +44,13 @@ public class User {
 		this.firstName = firstName;
 	}
 
-	public String getLastName() {
-		return lastName;
-	}
-
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
-	}
+//	public String getLastName() {
+//		return lastName;
+//	}
+//
+//	public void setLastName(String lastName) {
+//		this.lastName = lastName;
+//	}
 
 	public String getEmail() {
 		return email;

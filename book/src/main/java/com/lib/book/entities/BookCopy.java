@@ -27,7 +27,9 @@ public class BookCopy {
     @OneToMany(mappedBy = "bookCopy", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Loan> loans;
     
-    private boolean available;
+    private boolean reserved;
+    
+    private boolean borrowed;
 
     // getters and setters
     public Long getId() {
@@ -46,11 +48,19 @@ public class BookCopy {
         this.book = book;
     }
 
-    public boolean isAvailable() {
-        return available;
+    public boolean isReserved() {
+        return reserved;
     }
 
-    public void setAvailable(boolean available) {
-        this.available = available;
+    public void setReserved(boolean reserved) {
+        this.reserved = reserved;
     }
+
+	public boolean isBorrowed() {
+		return borrowed;
+	}
+
+	public void setBorrowed(boolean borrowed) {
+		this.borrowed = borrowed;
+	}
 }
