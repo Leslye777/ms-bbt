@@ -34,7 +34,6 @@ public class LoanService {
 		Users user = userFeignClient.findById(userId).getBody();
 		System.out.println(user.getEmail());
 		
-		
 	    BookCopy bookCopy = bookCopyRepository.findById(bookCopyId)
 	            .orElseThrow(() -> new IllegalArgumentException("BookCopy not found"));
 	    

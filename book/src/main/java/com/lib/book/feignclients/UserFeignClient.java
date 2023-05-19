@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import com.lib.book.entities.Users;
 
 @Component
-@FeignClient(name = "user", url="localhost:8002", path = "/api/users")
+@FeignClient(name = "user",  path = "/api/users")
 
 public interface UserFeignClient {
 
@@ -17,3 +17,4 @@ public interface UserFeignClient {
     ResponseEntity<Users>findById(@PathVariable Long id);
 
 }
+ 

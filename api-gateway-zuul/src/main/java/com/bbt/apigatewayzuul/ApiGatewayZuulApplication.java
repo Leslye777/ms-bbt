@@ -1,15 +1,13 @@
-package com.user;
+package com.bbt.apigatewayzuul;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
-@EnableEurekaClient
 @SpringBootApplication
-public class UserApplication {
+public class ApiGatewayZuulApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(UserApplication.class, args);
+		SpringApplication.run(ApiGatewayZuulApplication.class, args);
 	}
 
 }
