@@ -57,7 +57,7 @@ public class BookCopyService {
         }
     }
 
-
+ 
 //    public BookCopy updateBookCopy(Long id, BookCopy bookCopy) {
 //        Optional<BookCopy> optionalBookCopy = bookCopyRepository.findById(id);
 //        if (optionalBookCopy.isPresent()) {

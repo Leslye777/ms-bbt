@@ -47,7 +47,7 @@ public class BookService {
     	return book;
         
     }
-    
+
     public Book updateBook(Long id, Book book) {
         Optional<Book> optionalBook = bookRepository.findById(id);
         if (optionalBook.isPresent()) {
