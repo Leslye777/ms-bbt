@@ -28,6 +28,10 @@ public class UserService {
     public Users createUser(Users user) {
         return userRepository.save(user);
     }
+    
+    public Users getByEmail(String email) {
+        return userRepository.findByEmail(email);
+    }
 
     public Users updateUser(Long id, Users user) {
     	Users existingUser = userRepository.findById(id)

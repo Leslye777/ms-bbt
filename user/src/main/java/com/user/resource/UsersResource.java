@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.user.entities.Users;
@@ -35,6 +36,12 @@ public class UsersResource {
     @GetMapping("/{id}")
     public Users getUserById(@PathVariable Long id) {
         return userService.getUserById(id);
+    }
+    
+
+    @GetMapping("/search")
+    public Users getUserByEmail(@RequestParam String email) {
+        return userService.getByEmail(email);
     }
 
     @PostMapping
