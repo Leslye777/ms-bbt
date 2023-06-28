@@ -1,10 +1,10 @@
-package com.bbt.oauth;
+package com.bbt.hroauth;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class OauthApplicationTests {
+class HrOauthApplicationTests {
 
 	@Test
 	void contextLoads() {

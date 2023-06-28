@@ -40,8 +40,9 @@ public class UsersResource {
     
 
     @GetMapping("/search")
-    public Users getUserByEmail(@RequestParam String email) {
-        return userService.getByEmail(email);
+    public ResponseEntity<Users> getUserByEmail(@RequestParam String email) {
+      	Users user = userService.getByEmail(email);
+    	return ResponseEntity.ok(user);
     }
 
     @PostMapping

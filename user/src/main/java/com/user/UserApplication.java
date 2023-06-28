@@ -20,7 +20,7 @@ public class UserApplication implements CommandLineRunner{
 
 	@Override
 	public void run(String... args) throws Exception {
-		System.out.println("BCYPT = " + passwordEncoder.encode("123456"));
+		System.out.println("BCYPT = " + passwordEncoder.encode("1234567"));
 		
 	}
 
