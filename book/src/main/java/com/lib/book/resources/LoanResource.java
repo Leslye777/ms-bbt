@@ -19,7 +19,6 @@ import com.lib.book.services.LoanService;
 
 @RestController
 @RequestMapping("/api/loans")
-@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class LoanResource {
 
     @Autowired

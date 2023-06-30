@@ -22,7 +22,6 @@ import com.lib.book.services.BookCopyService;
 
 @RestController
 @RequestMapping("/api/book-copies")
-@CrossOrigin(origins = "*", allowedHeaders = "*")
 
 public class BookCopyResource {
     

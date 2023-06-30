@@ -19,7 +19,6 @@ import com.lib.book.entities.Book;
 import com.lib.book.services.BookService;
 
 @RestController
-@CrossOrigin(origins = "*", allowedHeaders = "*")
 @RequestMapping("/api/books")
 public class BookResource {
     

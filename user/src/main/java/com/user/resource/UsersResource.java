@@ -21,7 +21,6 @@ import com.user.services.UserService;
 
 
 @RestController
-@CrossOrigin(origins = "*", allowedHeaders = "*")
 @RequestMapping("/api/users")
 public class UsersResource {
 
