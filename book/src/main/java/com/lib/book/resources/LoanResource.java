@@ -25,9 +25,13 @@ public class LoanResource {
     private LoanService loanService;
 
     @PostMapping
-    public ResponseEntity<Loan> borrowBook(@RequestParam Long userId, @RequestParam Long bookCopyId) {
-        Loan loan = loanService.borrowBook(userId, bookCopyId);
-        return ResponseEntity.ok(loan);
+    public ResponseEntity<?> borrowBook(@RequestParam Long userId, @RequestParam Long bookCopyId) {
+        try {
+            Loan loan = loanService.borrowBook(userId, bookCopyId);
+            return ResponseEntity.ok(loan);
+        } catch (IllegalArgumentException e) {
+            return ResponseEntity.badRequest().body(e.getMessage());
+        }
     }
 
     @PutMapping("/{id}/return")
@@ -47,6 +51,12 @@ public class LoanResource {
     public ResponseEntity<Optional<Loan>> getLoanById(@PathVariable("id") Long loanId) {
         Optional<Loan> loan = loanService.getLoanById(loanId);
         return ResponseEntity.ok(loan);
+    }
+    
+    @GetMapping("/user/{id}")
+    public ResponseEntity<List<Loan>> getLoansByUserId(@PathVariable("id") Long loanId) {
+    	 List<Loan> loans = loanService.getAllLoansByUserId(loanId);
+         return ResponseEntity.ok(loans);
     }
 
     @GetMapping

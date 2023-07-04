@@ -27,5 +27,5 @@ VALUES
 INSERT INTO loan (book_copy_id, loan_date, expected_return_date, return_date, user_id, returned) VALUES (1, '2022-05-10', '2022-06-10', null, 1, false);
 INSERT INTO loan (book_copy_id, loan_date, expected_return_date, return_date, user_id, returned) VALUES (2, '2022-05-09', '2022-06-09', null, 2, false);
 INSERT INTO loan (book_copy_id, loan_date, expected_return_date, return_date, user_id, returned) VALUES (3, '2022-05-08', '2022-06-08', null, 3, false);
-INSERT INTO loan (book_copy_id, loan_date, expected_return_date, return_date, user_id, returned) VALUES (4, '2022-05-07', '2022-06-07', null, 4, false);
+INSERT INTO loan (book_copy_id, loan_date, expected_return_date, return_date, user_id, returned) VALUES (4, '2022-05-07', '2022-06-07', null, 4, true);
 INSERT INTO loan (book_copy_id, loan_date, expected_return_date, return_date, user_id, returned) VALUES (5, '2022-05-06', '2022-06-06', null, 5, true);

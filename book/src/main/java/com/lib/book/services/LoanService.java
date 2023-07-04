@@ -29,22 +29,24 @@ public class LoanService {
 
 	public Loan borrowBook(Long userId, Long bookCopyId) {
 	    // Verificar se o livro está disponível para empréstimo
-		
 
-		Users user = userFeignClient.findById(userId).getBody();
-		System.out.println(user.getEmail());
-		
+	    Users user = userFeignClient.findById(userId).getBody();
+	    if (user == null) {
+	        throw new IllegalArgumentException("User not found");
+	    }
+	    System.out.println(user.getEmail());
+
 	    BookCopy bookCopy = bookCopyRepository.findById(bookCopyId)
 	            .orElseThrow(() -> new IllegalArgumentException("BookCopy not found"));
-	    
+
 	    if (bookCopy.isReserved()) {
 	        throw new IllegalArgumentException("BookCopy is reserved");
 	    }
-	    
+
 	    if (bookCopy.isBorrowed()) {
 	        throw new IllegalArgumentException("BookCopy is borrowed");
 	    }
-	    
+
 	    // Criar empréstimo
 	    Loan loan = new Loan();
 	    loan.setBookCopy(bookCopy);
@@ -52,11 +54,11 @@ public class LoanService {
 	    loan.setExpecteReturnDate(LocalDate.now().plusDays(7));
 	    loan.setUserId(userId);
 	    loan.setReturned(false);
-	    
+
 	    // Marcar exemplar como indisponível
 	    bookCopy.setBorrowed(true);
 	    bookCopyRepository.save(bookCopy);
-	    
+
 	    // Salvar empréstimo
 	    return loanRepository.save(loan);
 	}
@@ -110,11 +112,15 @@ public class LoanService {
 
 	public List<Loan> listLoans() {
 	    // Listar empréstimos
-	    return loanRepository.findAll();
+        return loanRepository.findAllByOrderByLoanDateDesc();
 	}
 
 	public Optional<Loan> getLoanById(Long loanId) {
 		return loanRepository.findById(loanId);
+	}
+	
+	public List<Loan> getAllLoansByUserId(Long userId) {
+		return loanRepository.findAllByUserIdOrderByLoanDateDesc(userId);
 	}
 
  
