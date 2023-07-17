@@ -72,7 +72,7 @@ public class BookService {
         // Step 2: Find all loans associated with these book copies
         List<Loan> loans = new ArrayList<>();
         for (BookCopy bookCopy : bookCopies) {
-            List<Loan> loansForCopy = loanRepository.findByBookCopyId(bookCopy.getId());
+            List<Loan> loansForCopy = loanRepository.findAllByBookCopyId(bookCopy.getId());
             loans.addAll(loansForCopy);
         }
 

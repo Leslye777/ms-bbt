@@ -35,8 +35,8 @@ public class LoanResource {
     }
 
     @PutMapping("/{id}/return")
-    public ResponseEntity<Loan> returnBook(@PathVariable("id") Long loanId) {
-        Loan loan = loanService.returnBook(loanId);
+    public ResponseEntity<Loan> returnBook(@PathVariable("id") Long bookCopyId) {
+        Loan loan = loanService.returnBook(bookCopyId);
         return ResponseEntity.ok(loan);
     }
 

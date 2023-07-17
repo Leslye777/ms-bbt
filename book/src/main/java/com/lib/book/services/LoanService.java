@@ -63,10 +63,13 @@ public class LoanService {
 	    return loanRepository.save(loan);
 	}
 
-	public Loan returnBook(Long loanId) {
+	public Loan returnBook(Long bookCopyId) {
 	    // Verificar se o empréstimo existe
-	    Loan loan = loanRepository.findById(loanId)
-	            .orElseThrow(() -> new IllegalArgumentException("Loan not found"));
+	    Loan loan = loanRepository.findByBookCopyId(bookCopyId);
+	    
+	    if(loan == null) {
+	    	throw new IllegalArgumentException("Loan not found");
+	    }
 	    
 	    // Verificar se o exemplar está indisponível
 	    BookCopy bookCopy = loan.getBookCopy();

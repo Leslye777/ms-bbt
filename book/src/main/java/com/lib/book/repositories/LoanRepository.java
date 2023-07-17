@@ -11,7 +11,7 @@ import com.lib.book.entities.Loan;
 @Repository
 public interface LoanRepository extends JpaRepository<Loan, Long> {
 	
-	List<Loan> findByBookCopyId(Long id);
+//	List<Loan> findByBookCopyId(Long id);
 
 	List<Loan> findAllByOrderByLoanDateAsc();
 
@@ -20,6 +20,12 @@ public interface LoanRepository extends JpaRepository<Loan, Long> {
 	List<Loan> findAllByUserId(Long userId);
 
 	List<Loan> findAllByUserIdOrderByLoanDateDesc(Long userId);
+	
+	Loan findByBookCopyId(Long id);
+
+	List<Loan> findAllByBookCopyId(Long id);
+
+
 
 
 }
