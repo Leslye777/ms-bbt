@@ -13,4 +13,3 @@ VALUES ('Bob', 'Smith', 'bobsmith@email.com', '$2a$10$tUTO3pnvWOvzcD2BuPVhyO4ut/
 -- Insert User 4
 INSERT INTO users (first_name, last_name, email, password, role)
 VALUES ('Alice', 'Smith', 'alicesmith@email.com', '$2a$10$tUTO3pnvWOvzcD2BuPVhyO4ut/yzT7GBmyNX39q7ewBBHYiM2Fnoe', 'OPERATOR');
-
