@@ -5,4 +5,5 @@ system is divided into microservices, including services for user management (lo
 etc.) and library management (book registration, loans, returns, renewals, fines, etc.). The user interface was
 developed using Angular. The system is open source, allowing the community to make modifications and
 improvements. The main goal is to contribute to better library management and organization.
-The source code can be accessed via two repositories: Backen
+The source code can be accessed via two repositories: Backend: https://github.com/Leslye777/ms-bbt Frontend:
+https://github.com/Leslye777/bbt-front
