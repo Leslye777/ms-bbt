@@ -71,16 +71,45 @@ Below, I will briefly describe the packages that make up the structure of the "U
 The package structure of the "User" microservice allows for clear and modular organization, facilitating code development and maintenance. The "User" microservice can be flexibly integrated into the system, allowing the "Lib" to obtain user data from an external environment, such as an existing management system. This approach allows for greater adaptability and resource reuse, making the system more flexible and scalable.
 
 ![Use Case Diagram - Loan and Return](operadorusecase.jpg)
+## Microsservice Auth
 
-### 5.1.3 Auth Microservice
+The Auth microservice plays a fundamental role in the application, especially in institutions that do not have any existing management system, such as a school, for example. This microservice becomes responsible for all authentication and login aspects of the project.
 
-*Content for Auth Microservice goes here.*
+### Importance
 
-### 5.1.4 Eureka Server Microservice
+Several points highlight the importance of this microservice. Firstly, it provides a security layer for the system, ensuring that only authenticated users have access to protected functionalities and data, thus preventing unauthorized access and protecting sensitive information. Additionally, the Auth microservice simplifies development by providing a centralized solution for authentication management. This means that all other parts of the system can rely on it to authenticate users, check their permissions, and provide a consistent login flow. Therefore, there's no need to implement authentication logic in each separate service of the system, reducing complexity and avoiding code duplication.
 
-*Content for Eureka Server Microservice goes here.*
+### JWT Usage
 
-### 5.1.5 Zuul Gateway Microservice
+The use of JSON Web Token (JWT) by the Auth microservice is a common approach to managing authentication. JWT is an open standard that defines a format for securely transmitting information between parties. It consists of three parts: the header, the payload, and the signature. Upon logging into the system, the microservice generates a JWT token with information such as the user's identity and permissions. This token has a digital signature, ensuring its origin. The token is then returned to the client, which stores it locally. In subsequent requests, the client sends this token along with each request to protected services. The services can then verify the token's validity and extract the information contained within it to authenticate and authorize the user. This token-based approach is scalable and stateless, as it does not require servers to maintain authentication information in sessions or databases.
 
-*Content for Zuul Gateway Microservice goes here.*
+### Institutional Integration
+
+An institution that lacks any kind of system for its employees or students can use this microservice for this purpose. If the institution already has one, this microservice can be replaced by the existing one, thus avoiding redundancy in logins.
+
+## Microsservice Eureka Server
+
+The Eureka Server microservice plays a fundamental role in the project, acting as a service discovery server. All other microservices in the application are clients of the Eureka Server, registering with it and obtaining information about the location and availability of other services.
+
+### Distributed Architecture
+
+The Eureka Server enables a distributed and scalable architecture, where microservices can communicate seamlessly, regardless of whether their instances are running on different nodes or environments. It provides load balancing and failover features, ensuring that clients can access the correct services even in high-availability scenarios.
+
+### Migration to Amazon Services
+
+Additionally, the Eureka Server allows migration to a similar service on Amazon, such as Amazon Elastic Load Balancer (ELB) and Amazon Route 53. The migration would involve configuring these Amazon services and adapting the microservices' configurations to connect to the new environment. In an already functional environment where microservices configurations need to be migrated, the effort required due to the low complexity of the project can vary from a few days to a week, considering that the responsible person already has prior knowledge of Amazon services and the involved configurations.
+
+## Microsservice Gateway Zuul
+
+The Gateway Zuul microservice plays a fundamental role in the project, serving as an entry point for all client requests to access different microservices transparently, as well as being responsible for routing requests.
+
+### Key Features
+
+One of its important features is that it also acts as a client of the Eureka Server. This means that the Gateway Zuul registers with the Eureka Server and uses the discovery service to locate available microservices. This simplifies configuration and communication between different components of the system.
+
+### Potential Migration
+
+If it becomes necessary to replace the Gateway Zuul with an Amazon service, such as the API Gateway, it would be necessary to evaluate the compatibility and functionalities offered by the new service. The migration would involve configuring and deploying the API Gateway, updating existing configurations and routes, and conducting tests to ensure that the system functionality is maintained. Similar to the Eureka server, the estimated time for this work ranges from a few days to a week.
+
+
 
