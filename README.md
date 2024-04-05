@@ -48,7 +48,7 @@ The "Lib" microservice is an essential part of the project's architecture and ha
 
 This package structure provides a clear and modular organization of the "Lib" microservice, facilitating code understanding and maintenance, as well as promoting proper separation of responsibilities. Each package has a specific purpose and contributes to the overall operation and success of the application.
 
-![Use Case Diagram - User](use_case_user.png)
+![Use Case Diagram - User](operacoesusuario.jpg)
 
 ### 5.1.2 User Microservice
 
@@ -70,7 +70,7 @@ Below, I will briefly describe the packages that make up the structure of the "U
 
 The package structure of the "User" microservice allows for clear and modular organization, facilitating code development and maintenance. The "User" microservice can be flexibly integrated into the system, allowing the "Lib" to obtain user data from an external environment, such as an existing management system. This approach allows for greater adaptability and resource reuse, making the system more flexible and scalable.
 
-![Use Case Diagram - Loan and Return](use_case_loan_return.png)
+![Use Case Diagram - Loan and Return](operadorusecase.jpg)
 
 ### 5.1.3 Auth Microservice
 
