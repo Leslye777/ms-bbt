@@ -56,7 +56,7 @@ The "User" microservice plays a specific role in the project context, providing 
 
 Below, I will briefly describe the packages that make up the structure of the "User" microservice:
 
-![Use Case Diagram - Operator](operador use case.jpg)
+![Use Case Diagram - Operator](operacoesusuario.jpg)
 
 - **com.user.entities:** This package follows the Spring pattern and contains the configuration and initialization classes of the "User" microservice.
 
