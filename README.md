@@ -30,8 +30,6 @@ This microservices structure and the use of the Zuul API Gateway and Eureka serv
 
 The "Lib" microservice is an essential part of the project's architecture and has a structured organization in various packages, each performing a specific role. Below, I will briefly describe each of these packages that have been developed:
 
-![Files within Lib Microservice](lib_files.png)
-
 - **com.lib.book:** This package follows the Spring Boot pattern for project structure, containing classes related to book management. Here, you can find database configurations, initialization classes, as well as controllers and route mappings related to the "Book" entity.
 
 - **com.lib.config:** This package contains configurations related to RestTemplate, which is a Spring Framework class used to make calls to external REST APIs. Here, authentication configurations, interceptors, and other relevant configurations for requests can be found.
@@ -58,7 +56,7 @@ The "User" microservice plays a specific role in the project context, providing 
 
 Below, I will briefly describe the packages that make up the structure of the "User" microservice:
 
-![Use Case Diagram - Operator](use_case_operator.png)
+![Use Case Diagram - Operator](operador use case.jpg)
 
 - **com.user.entities:** This package follows the Spring pattern and contains the configuration and initialization classes of the "User" microservice.
 
