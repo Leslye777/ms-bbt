@@ -48,7 +48,7 @@ The "Lib" microservice is an essential part of the project's architecture and ha
 
 This package structure provides a clear and modular organization of the "Lib" microservice, facilitating code understanding and maintenance, as well as promoting proper separation of responsibilities. Each package has a specific purpose and contributes to the overall operation and success of the application.
 
-![Use Case Diagram - User](operacoesusuario.jpg)
+![Use Case Diagram - User](operacoesusuario.png)
 
 ### 5.1.2 User Microservice
 
@@ -56,7 +56,7 @@ The "User" microservice plays a specific role in the project context, providing 
 
 Below, I will briefly describe the packages that make up the structure of the "User" microservice:
 
-![Use Case Diagram - Operator](operacoesusuario.jpg)
+![Use Case Diagram - Operator](operadorusecase.jpg)
 
 - **com.user.entities:** This package follows the Spring pattern and contains the configuration and initialization classes of the "User" microservice.
 
