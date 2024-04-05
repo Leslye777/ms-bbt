@@ -24,7 +24,7 @@ Furthermore, all microservices act as clients of the Eureka server. The Eureka s
 
 This microservices structure and the use of the Zuul API Gateway and Eureka server bring benefits such as scalability, flexibility, and resilience to the application, allowing for the addition or removal of microservices as needed, as well as load balancing and fault recovery.
 
-![Backend General Structure](backend_structure.png)
+![Backend General Structure](Untitled-Page-2(1).png)
 
 ### 5.1.1 Lib Microservice
 
